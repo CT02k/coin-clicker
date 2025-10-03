@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🪙 Coin Clicker
 
-## Getting Started
+A incremental game built with Next.js and TypeScript. Click for coins, buy upgrades to automate your earnings, perform rebirths to grow stronger, and unlock achievements.
 
-First, run the development server:
+![Game Preview](https://arsenic.cv/api/raw/vDKf0CkEWBISsVGO)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Clicking Mechanic:** Click the coin to earn more.
+- **Dynamic Upgrade System:** Purchase upgrades that enhance your clicks or generate passive income.
+- **Rebirth System:** Sacrifice your current progress for permanent multiplier and reach new heights.
+- **Achievement System:** Unlock achievements for reaching specific milestones.
+- **Airdrops:** Keep an eye out for bonus airdrops that appear on the screen!
+- **Local Persistence:** Your progress is automatically saved in your browser using `localStorage`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **[Next.js](https://nextjs.org/)** - The React Framework for Production.
+- **[React](https://reactjs.org/)** - The library for web and native user interfaces.
+- **[TypeScript](https://www.typescriptlang.org/)** - For robust, type-safe code.
+- **[Tailwind CSS](https://tailwindcss.com/)** - For rapid, modern UI development.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ⚙️ Getting Started
 
-## Deploy on Vercel
+This project requires no complex setup. Follow the steps below to get it running locally.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Prerequisites
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Node.js](https://nodejs.org/en/) (v18.x or later)
+- [npm](https://www.npmjs.com/)
+
+### Installation & Execution
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/ct02k/coin-clicker
+    ```
+
+2.  **Navigate to the project directory:**
+
+    ```bash
+    cd coin-clicker
+    ```
+
+3.  **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+4.  **Run the development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+5.  **Open your browser:**
+    Visit [http://localhost:3000](http://localhost:3000) to see the game in action!
