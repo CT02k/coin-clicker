@@ -1,7 +1,7 @@
 import Terminal from "./Terminal";
 import CoinClicker from "./CoinClicker";
 import Store from "./Store";
-import Navigation from "./Navigation";
+import Navigation, { Tabs } from "./Navigation";
 import { useGameState } from "./utils/hooks";
 import { useTab } from "./utils/hooks";
 import { AchievementActionType, useAchievements } from "./Achievement";
@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 
 export default function Game() {
   const [state, dispatch] = useGameState();
-  const [tab, setTab] = useTab("clicker");
+  const [tab, setTab] = useTab(Tabs.Clicker);
   const { state: achState, dispatch: achDispatch } = useAchievements();
 
   const [toasts, setToasts] = useState<{ id: string; title: string; desc: string }[]>([]);

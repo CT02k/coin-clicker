@@ -1,4 +1,4 @@
-import { Home, Store as StoreIcon } from "lucide-react";
+import { Home, Medal, Store as StoreIcon } from "lucide-react";
 import { Action, ActionType, GameState } from "./types/gameReducer";
 import { formatNumber, getNextRebirthCost } from "./utils/utils";
 
@@ -9,9 +9,15 @@ const tabButtonClass = (active: boolean) =>
     active ? "bg-zinc-900 hover:bg-zinc-950" : "bg-zinc-700 hover:bg-zinc-800"
   } text-white w-12 h-12 flex items-center justify-center transition`;
 
+export enum Tabs {
+  Clicker = "clicker",
+  Store = "store",
+  Achievements = "achievements",
+}
+
 type Props = {
-  tab: "clicker" | "store";
-  setTab: React.Dispatch<"clicker" | "store">;
+  tab: Tabs;
+  setTab: React.Dispatch<Tabs>;
   state: GameState;
   dispatch: React.Dispatch<Action>;
 };
@@ -43,19 +49,27 @@ export default function Navigation({ tab, setTab, state, dispatch }: Props) {
       )}
 
       <button
-        className={tabButtonClass(tab === "clicker")}
+        className={tabButtonClass(tab === Tabs.Clicker)}
         style={{ clipPath: buttonClip }}
-        onClick={() => setTab("clicker")}
+        onClick={() => setTab(Tabs.Clicker)}
       >
         <Home />
       </button>
 
       <button
-        className={tabButtonClass(tab === "store")}
+        className={tabButtonClass(tab === Tabs.Store)}
         style={{ clipPath: buttonClip }}
-        onClick={() => setTab("store")}
+        onClick={() => setTab(Tabs.Store)}
       >
         <StoreIcon />
+      </button>
+
+      <button
+        className={tabButtonClass(tab === Tabs.Achievements)}
+        style={{ clipPath: buttonClip }}
+        onClick={() => setTab(Tabs.Achievements)}
+      >
+        <Medal />
       </button>
     </nav>
   );

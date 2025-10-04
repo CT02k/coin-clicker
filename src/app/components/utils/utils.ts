@@ -14,6 +14,8 @@ export function calculateClickGain(state: GameState, auto = false): number {
         if (e.type === "additive") bonus += e.value;
         if (e.type === "multiplier") multiplier *= e.value;
         if (e.type === "chance") chance += e.value;
+      } else if (e.target === "autoclicker" && auto) {
+        if (e.type === "additive") bonus += e.value - 1;
       }
     });
   }

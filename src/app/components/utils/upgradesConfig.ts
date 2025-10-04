@@ -8,7 +8,7 @@ export enum UpgradeEffectType {
 }
 
 export type UpgradeEffect = {
-  target: "click" | "airdrop";
+  target: "click" | "autoclicker" | "airdrop";
   type: UpgradeEffectType;
   value: number;
 };
@@ -34,7 +34,7 @@ export const upgrades: Record<string, UpgradeConfig> = {
       const level = state.upgrades.autoClicker || 0;
       return [
         {
-          target: "click",
+          target: "autoclicker",
           type: UpgradeEffectType.Additive,
           value: level * 1,
         },

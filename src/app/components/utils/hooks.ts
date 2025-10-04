@@ -1,6 +1,7 @@
 import { useReducer, useEffect } from "react";
 import { ActionType, initialGameState, gameReducer } from "../types/gameReducer";
 import { calculateClickGain } from "./utils";
+import { Tabs } from "../Navigation";
 
 export function useGameState() {
   const [state, dispatch] = useReducer(gameReducer, initialGameState, () => {
@@ -21,5 +22,4 @@ export function useGameState() {
   return [state, dispatch] as const;
 }
 
-export const useTab = (initial: "clicker" | "store") =>
-  useReducer((_, newTab: "clicker" | "store") => newTab, initial);
+export const useTab = (initial: Tabs) => useReducer((_, newTab: Tabs) => newTab, initial);
