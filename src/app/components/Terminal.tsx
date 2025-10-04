@@ -267,7 +267,7 @@ export default function Terminal({ dispatch }: TerminalProps) {
       }
     >
       <div
-        className="flex items-center gap-2 px-3 py-2 bg-zinc-800 rounded-t-lg relative select-none"
+        className={`flex items-center ${minimized ? "justify-between" : ""} gap-2 px-3 py-2 bg-zinc-800 rounded-t-lg relative select-none`}
         onMouseDown={onMouseDown}
       >
         <div className="flex gap-2">
@@ -284,7 +284,9 @@ export default function Terminal({ dispatch }: TerminalProps) {
             onClick={() => setPos({ x: 50, y: 50 })}
           />
         </div>
-        <span className="text-xs opacity-60 absolute flex gap-2 left-1/2 w-fit right-1/2 -translate-x-1/2">
+        <span
+          className={`text-xs opacity-60 ${minimized ? "" : "absolute left-1/2 w-fit right-1/2 -translate-x-1/2"} flex gap-2`}
+        >
           <Image src={TerminalIcon} width={16} height={16} alt="Terminal Icon" /> Terminal
         </span>
       </div>
