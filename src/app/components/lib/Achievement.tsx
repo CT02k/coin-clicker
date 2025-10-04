@@ -111,7 +111,7 @@ type AchievementState = {
   achievements: Achievement[];
 };
 
-type AchievementAction =
+export type AchievementAction =
   | { type: AchievementActionType.UNLOCK; id: string }
   | { type: AchievementActionType.LOAD_SAVED; payload: Achievement[] };
 

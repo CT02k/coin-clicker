@@ -36,7 +36,7 @@ export default function AirdropSystem({ state, dispatch }: Props) {
 
       setTimeout(() => {
         setDrops((prev) => prev.filter((d) => d.id !== newDrop.id));
-      }, 5000);
+      }, interval);
     };
 
     const timer = setInterval(() => {
@@ -53,7 +53,7 @@ export default function AirdropSystem({ state, dispatch }: Props) {
     const dropValueMultiplier = 1 + (state.upgrades.extraDropValue || 0) * 0.1;
 
     dispatch({
-      type: ActionType.AddCoins,
+      type: ActionType.CollectAirdrop,
       payload: {
         amount: Math.floor(baseAmount * dropValueMultiplier),
       },

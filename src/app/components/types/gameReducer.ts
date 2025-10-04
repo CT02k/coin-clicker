@@ -1,6 +1,7 @@
 export type GameState = {
   coins: number;
   rebirths: number;
+  totalClicks: number;
   upgrades: Record<string, number>;
   airdrops_collected: number;
   lucky_event_triggered: boolean;
@@ -9,6 +10,7 @@ export type GameState = {
 export enum ActionType {
   AddCoins = "ADD_COINS",
   RemoveCoins = "REMOVE_COINS",
+  AddClick = "ADD_CLICK",
   BuyUpgrade = "BUY_UPGRADE",
   BuyUpgradeBulk = "BUY_UPGRADE_BULK",
   AddRebirth = "ADD_REBIRTH",
@@ -21,6 +23,7 @@ export enum ActionType {
 type ActionMap = {
   [ActionType.AddCoins]: { amount: number };
   [ActionType.RemoveCoins]: { amount: number };
+  [ActionType.AddClick]: undefined;
   [ActionType.BuyUpgrade]: { upgradeId: string; cost: number };
   [ActionType.BuyUpgradeBulk]: { upgradeId: string; amount: number; totalCost: number };
   [ActionType.AddRebirth]: undefined;
@@ -40,6 +43,7 @@ export type Action = {
 export const initialGameState: GameState = {
   coins: 0,
   rebirths: 0,
+  totalClicks: 0,
   upgrades: {},
   airdrops_collected: 0,
   lucky_event_triggered: false,
@@ -52,6 +56,9 @@ export const gameReducer = (state: GameState, action: Action): GameState => {
 
     case ActionType.RemoveCoins:
       return { ...state, coins: Math.max(0, state.coins - action.payload.amount) };
+
+    case ActionType.AddClick:
+      return { ...state, totalClicks: state.totalClicks + 1 };
 
     case ActionType.BuyUpgrade: {
       const { upgradeId, cost } = action.payload;

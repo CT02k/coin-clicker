@@ -24,6 +24,11 @@ export default function CoinClicker({ state, dispatch }: Props) {
       },
     });
 
+    dispatch({
+      type: ActionType.AddClick,
+      payload: undefined,
+    });
+
     const isLucky = Math.random() < 0.000001;
     if (isLucky) {
       dispatch({ type: ActionType.TriggerLuckyEvent, payload: undefined });

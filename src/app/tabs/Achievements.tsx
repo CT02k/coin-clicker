@@ -7,14 +7,14 @@ type Props = {
   dispatch: React.Dispatch<Action>;
 };
 
-export default function Achievements({ state }: Props) {
+export default function Achievements() {
   const { state: achievementState } = useAchievements();
 
   return (
     <div className="achievements flex flex-col justify-center items-center gap-6 w-2/3">
       <div className="flex flex-wrap px-8 py-6 gap-4 max-h-[70vh] overflow-y-auto">
         {achievementState.achievements.map((ach) => {
-          const unlocked = ach.condition(state);
+          const unlocked = ach.achieved;
 
           return (
             <div

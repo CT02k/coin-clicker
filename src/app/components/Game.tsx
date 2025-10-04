@@ -6,9 +6,10 @@ import { useGameState } from "./utils/hooks";
 import { useTab } from "./utils/hooks";
 import { AchievementActionType, useAchievements } from "./lib/Achievement";
 
-import AchievementToast from "./AchievementToast";
+import AchievementToast from "./lib/AchievementToast";
 import { useEffect, useState } from "react";
 import Achievements from "../tabs/Achievements";
+import Stats from "../tabs/Stats";
 
 export default function Game() {
   const [state, dispatch] = useGameState();
@@ -34,8 +35,8 @@ export default function Game() {
         {
           clicker: <CoinClicker state={state} dispatch={dispatch} />,
           store: <Store state={state} dispatch={dispatch} />,
-          achievements: <Achievements state={state} dispatch={dispatch} />,
-          stats: <></>,
+          achievements: <Achievements />,
+          stats: <Stats state={state} dispatch={dispatch} />,
         }[tab]
       }
       <Navigation tab={tab} state={state} dispatch={dispatch} setTab={setTab} />
