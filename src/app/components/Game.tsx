@@ -8,6 +8,7 @@ import { AchievementActionType, useAchievements } from "./Achievement";
 
 import AchievementToast from "./AchievementToast";
 import { useEffect, useState } from "react";
+import Achievements from "./Achievements";
 
 export default function Game() {
   const [state, dispatch] = useGameState();
@@ -29,11 +30,13 @@ export default function Game() {
     <main className="flex flex-col items-center justify-between h-screen p-4 relative select-none">
       <Terminal dispatch={dispatch} />
       <h1 className="text-3xl font-bold mb-4">Coin Clicker</h1>
-      {tab === "clicker" ? (
-        <CoinClicker state={state} dispatch={dispatch} />
-      ) : (
-        <Store state={state} dispatch={dispatch} />
-      )}
+      {
+        {
+          clicker: <CoinClicker state={state} dispatch={dispatch} />,
+          store: <Store state={state} dispatch={dispatch} />,
+          achievements: <Achievements state={state} dispatch={dispatch} />,
+        }[tab]
+      }
       <Navigation tab={tab} state={state} dispatch={dispatch} setTab={setTab} />
 
       {toasts.map((toast) => (
