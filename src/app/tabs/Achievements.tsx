@@ -2,11 +2,6 @@
 import { GameState, Action } from "../components/types/gameReducer";
 import { useAchievements } from "../components/lib/Achievement";
 
-type Props = {
-  state: GameState;
-  dispatch: React.Dispatch<Action>;
-};
-
 export default function Achievements() {
   const { state: achievementState } = useAchievements();
 
