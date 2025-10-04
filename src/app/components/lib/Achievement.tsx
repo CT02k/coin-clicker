@@ -1,7 +1,7 @@
 "use client";
 import { createContext, useContext, useEffect, useReducer } from "react";
-import { Achievement } from "./types/achievements";
-import { GameState } from "./types/gameReducer";
+import { Achievement } from "../types/achievements";
+import { GameState } from "../types/gameReducer";
 
 export const achievementsList: Achievement[] = [
   {

@@ -1,6 +1,6 @@
 "use client";
-import { GameState, Action } from "./types/gameReducer";
-import { useAchievements } from "./Achievement";
+import { GameState, Action } from "../components/types/gameReducer";
+import { useAchievements } from "../components/lib/Achievement";
 
 type Props = {
   state: GameState;

@@ -1,6 +1,6 @@
-import { upgrades } from "./utils/upgradesConfig";
-import UpgradeCard from "./UpgradeCard";
-import { GameState, Action } from "./types/gameReducer";
+import { upgrades } from "../components/utils/upgradesConfig";
+import UpgradeCard from "../components/UpgradeCard";
+import { GameState, Action } from "../components/types/gameReducer";
 
 type Props = {
   state: GameState;

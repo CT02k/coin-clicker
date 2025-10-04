@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Coin from "@/../public/coin.png";
-import { calculateClickGain, formatNumber } from "./utils/utils";
-import { GameState, Action, ActionType } from "./types/gameReducer";
+import { calculateClickGain, formatNumber } from "../components/utils/utils";
+import { GameState, Action, ActionType } from "../components/types/gameReducer";
 
 type Props = {
   state: GameState;
@@ -9,7 +9,7 @@ type Props = {
 };
 
 import { useState, useEffect } from "react";
-import AirdropSystem from "./AirDrop";
+import AirdropSystem from "../components/AirDrop";
 
 export default function CoinClicker({ state, dispatch }: Props) {
   const [mounted, setMounted] = useState(false);

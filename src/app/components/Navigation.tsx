@@ -1,4 +1,4 @@
-import { Home, Medal, Store as StoreIcon } from "lucide-react";
+import { ChartArea, Home, Medal, Store as StoreIcon } from "lucide-react";
 import { Action, ActionType, GameState } from "./types/gameReducer";
 import { formatNumber, getNextRebirthCost } from "./utils/utils";
 
@@ -13,6 +13,7 @@ export enum Tabs {
   Clicker = "clicker",
   Store = "store",
   Achievements = "achievements",
+  Stats = "stats",
 }
 
 type Props = {
@@ -70,6 +71,14 @@ export default function Navigation({ tab, setTab, state, dispatch }: Props) {
         onClick={() => setTab(Tabs.Achievements)}
       >
         <Medal />
+      </button>
+
+      <button
+        className={tabButtonClass(tab === Tabs.Stats)}
+        style={{ clipPath: buttonClip }}
+        onClick={() => setTab(Tabs.Stats)}
+      >
+        <ChartArea />
       </button>
     </nav>
   );
